@@ -5,24 +5,28 @@ import classNames from 'classnames';
 //  {this.props.children}
 // </button>
 
-class Button2 extends React.Component {
-  render() {
-    return (
-      <button
-        className={classNames('button', 'button--cart', {
-          'button--outline': this.props.outline,
-        })}
-      >
-        {this.props.children}
-      </button>
-    );
-  }
-}
+// class Button2 extends React.Component {
+//  render() {
+//    return (
+//      <button
+//        className={classNames('button', 'button--cart', {
+//          'button--outline': this.props.outline,
+//        })}
+//      >
+//        {this.props.children}
+//      </button>
+//    );
+//  }
+// }
 
-function Button(props) {
+// eslint-disable-next-line react/prop-types
+function Button({ onClick, outline, children, className }) {
   return (
-    <button className={classNames('button', 'button--cart', { 'button--outline': props.outline })}>
-      {props.children}
+    <button
+      onClick={onClick}
+      className={classNames('button', className, { 'button--outline': outline })}
+    >
+      {children}
     </button>
   );
 }
