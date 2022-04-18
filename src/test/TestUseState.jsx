@@ -1,6 +1,6 @@
 import React from 'react';
 
-// class Test1 extends React.Component {
+// class TestUseState extends React.Component {
 //   state = {
 //     counter: 0,
 //   };
@@ -23,7 +23,7 @@ import React from 'react';
 //   }
 // }
 
-const Test1 = () => {
+const TestUseState = () => {
   const [values, setValues] = React.useState([]);
 
   const addValues = () => {
@@ -48,4 +48,4 @@ const Test1 = () => {
   );
 };
 
-export default Test1;
+export default TestUseState;
