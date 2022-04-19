@@ -11,7 +11,6 @@ function SortPopup({ items }) {
   }, []);
 
   const handleOutsidePopupAreaClick = ({ path }) => {
-    console.log(1)
     if (!path.includes(sortRef.current)) {
       setShowPopup(false);
     }

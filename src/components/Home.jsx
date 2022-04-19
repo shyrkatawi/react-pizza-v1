@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, Categories, SortPopup } from './components';
-import TestUseState from './test/TestUseState';
+import { Button, Categories, PizzaItems, SortPopup } from './index';
+import TestUseState from '../test/TestUseState';
 
-function Home() {
+function Home({ pizzaItems }) {
   return (
     <div>
       <TestUseState />
@@ -20,8 +20,12 @@ function Home() {
             />
             <SortPopup items={['популярности', 'цене', 'алфавиту']} />
           </div>
+
           <h2 className="content__title">Все пиццы</h2>
-          <div className="content__items">
+          <PizzaItems pizzaItems={pizzaItems} />
+
+          <h2 className="content__title">Все пиццы OLD</h2>
+          <div className="content__items old">
             <div className="pizza-block">
               <img
                 className="pizza-block__image"
@@ -32,7 +36,7 @@ function Home() {
               <div className="pizza-block__selector">
                 <ul>
                   <li className="active">тонкое</li>
-                  <li>традиционное</li>
+                  <li className="active">традиционное</li>
                 </ul>
                 <ul>
                   <li className="active">26 см.</li>
