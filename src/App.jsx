@@ -2,6 +2,17 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import { Cart, Header } from './components';
+import store from './redux/store';
+import { counterActionTypes } from './redux/store-helper';
+
+store.subscribe(() => {
+  console.log('da', store.getState());
+});
+
+store.dispatch({ type: counterActionTypes.incremented });
+store.dispatch({ type: 'incremented' });
+store.dispatch({ type: counterActionTypes.incremented });
+store.dispatch({ type: 'incremented' });
 
 function App() {
   const [pizzaItems, setPizzaItems] = React.useState([]);
